@@ -1,0 +1,28 @@
+
+
+.Order{
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0 12px 0;
+    font-size: var(--md);
+    font-weight: bold;    
+}
+.Order p:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    place-self: center;
+   
+}
+.Order p:nth-child(2){
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.Order p:nth-child(1) :last-child{
+    color: var(--very-light-pink);
+    font-size: var(--sm);
+    font-weight: normal;
+}
+.Order p:nth-child(2) img{
+    margin-left: 20px;
+}
