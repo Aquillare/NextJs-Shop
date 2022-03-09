@@ -1,0 +1,30 @@
+@import './global/global.scss';
+
+.OrderItem{
+    display: grid;
+    grid-template-columns: 30% 40% 20% auto;
+    gap: 6px;
+    margin-bottom: 24px;
+    align-items: center;
+    cursor: default;
+}
+
+.OrderItem img {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    object-fit: cover;
+    justify-self: start;
+
+}
+.OrderItem p:nth-child(2){
+    color: $--very-light-pink;
+}
+.OrderItem p:nth-child(3){
+    font-size: $--md;
+    font-weight: bold;
+    justify-self: center;
+}
+.close-image{
+    cursor: pointer;
+}

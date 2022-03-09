@@ -1,13 +1,14 @@
 import React , {useContext} from "react";
+import Image from "next/image";
 import OrderItem from "@components/OrderItem";
-import "@styles/MyOrder.scss/";
 import arrow from '@icons/flechita.svg';
 import AppContext from "../context/AppContext";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import styles from '@styles/MyOrder.module.scss';
 
 
 const MyOrder = () => {
-    const {state} = useContext(AppContext);
+    const {state, toggleOrders} = useContext(AppContext);
 
     
     const sumTotal = () => {
@@ -18,28 +19,33 @@ const MyOrder = () => {
     }
 
     return(
-        <aside className="MyOrder">
-            <div className="title-container">
-                <img src={arrow} alt="arrow"/>
-                <p className="title">My order</p>
+        <aside className={styles.MyOrder}>
+            <div className={styles["title-container"]}>
+                <Image src={arrow} alt="arrow"/>
+                <p className={styles.title}>My order</p>
             </div>
-            <div className="my-order-content">
+            <div className={styles["my-order-content"]}>
                 {state.cart.map( product => 
                   <OrderItem product={product} key={`OrderItem-${product.id}`}/>)
                   }  {/*Usamos `orderoItem-${}` para agregar un texto al numero del id y asi no tener conflictos ya que usamos es id en el key del map que usamos en el compoenente productList */}        
 
-                <div className="order">
+                <div className={styles.order}>
                     <p>
                         <span>Total</span>
                     </p>
                     <p>${sumTotal()}</p>
                 </div>
-                   <Link to="/checkout"> <button 
-                    type="button"
-                    className="primary-button"  
+                   <Link
+                    href="/checkout"  
                     >
-                        Checkout
-                    </button></Link>
+                        <button
+                            onClick={toggleOrders}
+                            className={styles["primary-button"]}
+                        >
+                            Checkout
+                        </button>
+                        
+                    </Link>
                 </div>
         </aside>
     );

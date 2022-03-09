@@ -1,8 +1,7 @@
 import React,{ useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/MobileMenu.scss';
+import Link from 'next/link';
 import MobileMenuCategories from './MobileMenuCategories';
-
+import styles from '@styles/MobileMenu.module.scss';
 
 
 const MobileMenu = () =>{
@@ -11,31 +10,30 @@ const MobileMenu = () =>{
 
     const handleToggleCategories = () => {
         setCategories(!toggleCategories);
-    }
+    };
 
 
     return(
-        <div className="MobileMenu">
+        <div className={styles.MobileMenu}>
 
-            <ul className="MobileMenu_ul">
+            <ul className={styles["MobileMenu_ul"]}>
 
-                <li className="MobileMenu_li">
-                    <Link to="/orders">My Orders</Link>
+                <li className={styles["MobileMenu_li"]}>
+                   <Link href="/orders">My Orders</Link> 
                 </li>
 
-                <li className="MobileMenu_li">
-                    <Link to="account">My Account</Link>
+                <li className={styles["MobileMenu_li"]}>
+                   <Link href="/account">My Account</Link> 
                 </li>
 
-                <li className="MobileMenu_li">
-                    <Link to="" onClick={handleToggleCategories}>
-                        Categories                        
-                    </Link>
+                <li className={styles["MobileMenu_li"]}>
+                    <button className={styles["MobileMenu_categories"]} onClick={handleToggleCategories}>Categories</button> 
+                    
                     {toggleCategories && <MobileMenuCategories/>}
                 </li>
 
-                <li className="MobileMenu_li">
-                    <Link to="/login">Sign out</Link>
+                <li className={styles["MobileMenu_li"]}>
+                   <Link href="/login">Sign out</Link>
                 </li>
             </ul>
            

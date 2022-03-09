@@ -1,10 +1,10 @@
-
+@import './global/global.scss';
 
 .Order{
     display: flex;
     justify-content: space-between;
     margin: 12px 0 12px 0;
-    font-size: var(--md);
+    font-size: $--md;
     font-weight: bold;    
 }
 .Order p:nth-child(1){
@@ -19,8 +19,8 @@
     align-items: center;
 }
 .Order p:nth-child(1) :last-child{
-    color: var(--very-light-pink);
-    font-size: var(--sm);
+    color: $--very-light-pink;
+    font-size: $--sm;
     font-weight: normal;
 }
 .Order p:nth-child(2) img{

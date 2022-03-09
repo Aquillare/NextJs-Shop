@@ -1,12 +1,11 @@
 import React from 'react';
-import '@styles/Order.scss';
-
 import arrow from '@icons/flechita.svg';
+import styles from '@styles/Order.module.scss';
 
 const Order = () => {
     return(
         <>
-        <div className="Order">
+        <div className={styles.Order}>
             <p>
                 <span>04.25.2021</span>
                 <span>6 articles</span>
@@ -14,12 +13,12 @@ const Order = () => {
             <p>
                 <span>$ 120,00</span>
                 <img 
-                 src={arrow}
+                 src={arrow.src}
                  alt="arrow"
-                 className="arrow-img"/>
+                 className={styles["arrow-img"]}/>
             </p>
         </div>
-        <div className="Order">
+        <div className={styles.Order}>
             <p>
                 <span>04.25.2021</span>
                 <span>6 articles</span>
@@ -27,12 +26,12 @@ const Order = () => {
             <p>
                 <span>$ 120,00</span>
                 <img 
-                 src={arrow}
+                 src={arrow.src}
                  alt="arrow"
-                 className="arrow-img"/>
+                 className={styles["arrow-img"]}/>
             </p>
         </div>
-        <div className="Order">
+        <div className={styles.Order}>
             <p>
                 <span>04.25.2021</span>
                 <span>6 articles</span>
@@ -40,12 +39,12 @@ const Order = () => {
             <p>
                 <span>$ 120,00</span>
                 <img 
-                 src={arrow}
+                 src={arrow.src}
                  alt="arrow"
-                 className="arrow-img"/>
+                 className={styles["arrow-img"]}/>
             </p>
         </div>
-        <div className="Order">
+        <div className={styles.Order}>
             <p>
                 <span>04.25.2021</span>
                 <span>6 articles</span>
@@ -53,12 +52,12 @@ const Order = () => {
             <p>
                 <span>$ 120,00</span>
                 <img 
-                 src={arrow}
+                 src={arrow.src}
                  alt="arrow"
-                 className="arrow-img"/>
+                 className={styles["arrow-img"]}/>
             </p>
         </div>
-        <div className="Order">
+        <div className={styles.Order}>
             <p>
                 <span>04.25.2021</span>
                 <span>6 articles</span>
@@ -66,12 +65,12 @@ const Order = () => {
             <p>
                 <span>$ 120,00</span>
                 <img 
-                 src={arrow}
+                 src={arrow.src}
                  alt="arrow"
-                 className="arrow-img"/>
+                 className={styles["arrow-img"]}/>
             </p>
         </div>
-        <div className="Order">
+        <div className={styles.Order}>
             <p>
                 <span>04.25.2021</span>
                 <span>6 articles</span>
@@ -79,9 +78,9 @@ const Order = () => {
             <p>
                 <span>$ 120,00</span>
                 <img 
-                 src={arrow}
+                 src={arrow.src}
                  alt="arrow"
-                 className="arrow-img"/>
+                 className={styles["arrow-img"]}/>
             </p>
         </div>
         </>

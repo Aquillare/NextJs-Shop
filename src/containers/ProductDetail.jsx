@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import ProductInfo from '@components/ProductInfo';
-import '@styles/ProductDetail.scss';
+import iconClose from '@icons/icon_close.png';
+import AppContext from "@context/AppContext";
+import styles from '@styles/ProductDetail.module.scss';
+
 
 const ProductDetail = () => {
+
+    const {closeProductInfo} = useContext(AppContext)
+
     return(
-        <aside className="ProductDetail">
-            <div className="ProductDetail-close">
-                <img src="./src/static/icons/icon_close.png" alt="close"/>
+        <div className={styles.ProductDetail}>
+            <div className={styles["ProductDetail-close"]} onClick={() => closeProductInfo()}>
+                <img src={iconClose.src} alt="close"/>
             </div>
             <ProductInfo/>
-        </aside>
+        </div>
     );
 };
 

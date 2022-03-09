@@ -1,11 +1,11 @@
-
+@import './global/global.scss';
 
 .ProductList{
     display: grid;
     grid-template-columns: repeat(auto-fill,240px); /*la funcion repeat recibe dos argumentos, la cantidad de columnas y el tamaño de cada columnas*/ /* el primer argumento, auto-fill indica que se agregaran la cantidad de columnas que quepan en la pantalla automaticamente*/
     gap: 26px; /*gap sera el espacio que hay de margen entre cada elemento de la grid, eset margen aplicara entre elementos, pero no entre el elemento y el borde del contenedor*/
     place-content:center;
-    margin: 3em 0 0 0;
+    margin: 5em 0 0 0;
 }
 @media (max-width: 640px){
     .ProductList{

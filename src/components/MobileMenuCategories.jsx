@@ -1,39 +1,38 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import '../styles/MobileMenu.scss';
-import AppContext from "../context/AppContext";
+import AppContext from "@context/AppContext";
+import styles from '@styles/MobileMenuCategories.module.scss';
 
 const MobileMenuCategories = () => {
 
     const {selectCategory} = useContext(AppContext);
 
     return(
-        <ul className="MobileMenu_categories">
+        <ul className={styles.MobileMenuCategories}>
 
-                            <li className="categories_li">
-                                <Link to="/" onClick={()=>selectCategory(0)}>All</Link>
-                            </li>
+            <li >
+                <button className={styles["MobileMenuCategories_button"]}  onClick={()=>selectCategory(0)}>All</button> 
+            </li>
                                 
-                            <li className="categories_li">
-                                <Link to="/" onClick={()=>selectCategory('Clothes')}>Clothes</Link>
-                            </li>
+            <li >
+                <button className={styles["MobileMenuCategories_button"]}  onClick={()=> selectCategory('Clothes')}>Clothes</button> 
+            </li>
                             
-                            <li className="categories_li">
-                                <Link to="/" onClick={()=>selectCategory('Electronics')}>Electronics</Link>
-                            </li>
+            <li >
+                <button className={styles["MobileMenuCategories_button"]} onClick={()=>selectCategory('Electronics')}>Electronics</button> 
+            </li>
                                 
-                            <li className="categories_li">
-                                <Link to="/" onClick={()=>selectCategory('Furniture')}>Furnitures</Link>
-                            </li>
+            <li >
+                <button className={styles["MobileMenuCategories_button"]}  onClick={()=>selectCategory('Furniture')}>Furnitures</button> 
+            </li>
 
-                            <li className="categories_li">
-                                <Link to="/" onClick={()=>selectCategory('Toys')}>Toys</Link>
-                            </li>
+            <li >
+                <button className={styles["MobileMenuCategories_button"]}  onClick={()=>selectCategory('Toys')}>Toys</button> 
+            </li>
 
-                            <li>
-                                <Link to="/" onClick={()=>selectCategory('Others')}>Others</Link>
-                            </li>
-                        </ul>
+            <li>
+                <button className={styles["MobileMenuCategories_button"]}  onClick={()=>selectCategory('Others')}>Others</button> 
+            </li>
+        </ul>
     );
 };
 

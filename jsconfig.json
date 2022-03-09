@@ -8,21 +8,25 @@
             "@components/*": [
                 "components/*"
             ],
-            "@conatiners/*": [
+            "@containers/*": [
                 "containers/*"
             ],
             "@context/*": [
                 "context/*"
             ],
             "@icons/*": [
-                "icons/*"
+                "assets/icons/*"
             ],
             "@logos/*": [
-                "logos/*"
+                "assets/logos/*"
             ],
             "@styles/*": [
                 "styles/*"
+            ],
+            "@hooks/*": [
+                "hooks/*"
             ]
+
 
         }
     }

@@ -1,0 +1,22 @@
+@import './global/global.scss';
+
+.MobileMenuCategories{
+    text-decoration: none;
+    font-size: $--md;
+    color: $--black;
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 90%;
+    border-top: 1px solid $--very-light-pink;
+    padding-top: 10px;  
+    list-style: none;
+}
+.MobileMenuCategories_button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: $--md;
+    color: $--black;
+    font-weight: bold;
+    margin-bottom: 20px;  
+}

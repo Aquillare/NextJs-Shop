@@ -1,0 +1,59 @@
+@import './global/global.scss';
+
+.Menu{
+    width: 194px;
+    height: auto;
+    border: 1px solid $--very-light-pink;
+    padding: 20px 20px 0 20px;
+    border-radius: 8px;
+    position: absolute;
+    top: 60px;
+    right:40px;
+    z-index: 1;
+    
+    background-color: $--text-input-field;
+}
+
+.Menu ul{   
+    list-style: none;
+    padding: 0;
+    margin:0;
+    
+}
+.Menu li{
+    text-align: end;
+}
+
+.menu_button{
+    text-decoration: none;
+    font-size: $--md;
+    color: $--black;
+    display: inline-block;
+    margin-bottom: 20px;  
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.Menu li:last-child {
+    padding-top: 20px;
+    border-top: 1px solid $--very-light-pink;
+}
+
+.menu_button2{
+    color: $--hospital-green;
+    font-size: $--sm;
+    border: none;
+    background: transparent;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+
+@media(max-width:640px){
+    .Menu{
+        display: none;
+    }
+}

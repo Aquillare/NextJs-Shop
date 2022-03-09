@@ -15,5 +15,8 @@ module.exports = {
     ],
     rules:{
         'semi': ['error', 'always'],
+        'prettier/prettier':0,
+        'jsx-a11y/click-events-have-key-events':0,
+        '@next/next/no-img-element':0,
     }
 }

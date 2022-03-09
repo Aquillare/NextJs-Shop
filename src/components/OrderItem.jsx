@@ -1,8 +1,8 @@
 import React, {useContext} from "react";
-import '@styles/OrderItem.scss';
-import AppContext from "../context/AppContext";
-
+import Image from "next/image";
+import AppContext from "@context/AppContext";
 import close from '@icons/icon_close.png';
+import styles from '@styles/OrderItem.module.scss';
 
 const OrderItem = ({product}) => {
 
@@ -10,18 +10,18 @@ const OrderItem = ({product}) => {
 
     const handleRemove = (product) => {
         removeFromCart(product);
-    }
+    };
 
   return(
-        <div className="OrderItem">
-            <figure>
-                   <img src={product.images[0]} alt={product.title}/>
-            </figure>
+        <div className={styles.OrderItem}>
+            
+                   <Image src={product.images[0]} alt={product.title} width='70px' height='70px' layout='fixed'/>
+                   
             <p>{product.title}</p>
             <p>${product.price}</p>
-            <img src={close} onClick={() => handleRemove(product)}alt="close"/>
+            <Image className={styles["close-image"]} src={close.src} onClick={() => handleRemove(product)}alt="close" width='14px' height='14px' layout='fixed'/>
         </div>
-        )
+        );
     
 };
 

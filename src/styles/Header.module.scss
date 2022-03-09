@@ -1,0 +1,125 @@
+@import './global/global.scss';
+
+.Nav{
+    height: 60px;
+    display: flex;
+    border-bottom: 1px solid $--very-light-pink;
+    justify-content: space-between;
+    padding: 0 24px;
+    margin-bottom: 20px;
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 1;
+    background: $--white ;
+}
+.menu{
+    display: none;
+}
+.logo-nav{
+    width: 100px;
+    align-self: center;
+    cursor: pointer;
+}
+.navbar-left{
+    display: flex;
+}
+ .navbar-rigth{
+    display:   flex;
+ }
+
+.navbar-left_ul,
+.navbar-rigth ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.navbar-left_ul{
+    margin: 0px;
+    padding: 0px;
+    height: 37.3px;
+    align-self: center;
+}
+
+.navbar-left_ul li button,
+.navbar-rigth ul li a{
+    text-decoration: none;
+    color: $--very-light-pink;
+    border: 1px solid $--white;
+    padding: 8px;
+    border-radius:8px;
+    cursor: pointer;
+    font-size: $--sm;
+    background: $--white;
+}
+.navbar-left_ul li button:hover,
+.navbar-rigth ul li a:hover{
+    color: $--hospital-green;
+    border: 1px solid $--hospital-green;
+}
+ .navbar-email{
+     color: $--very-light-pink;
+     font-size: $--sm;
+     margin-right: 12px;
+     background: transparent;
+     border: none;
+     cursor: pointer;
+ }
+
+ .navbar-shopping-cart{
+    cursor: pointer;
+    position: relative;
+ }
+
+
+ .shopping-cart-counter{
+     width: 16px;
+     height: 16px;
+     background-color: $--hospital-green;
+     border-radius: 50%;
+     font-size: 12px;
+     font-weight: bold;
+     text-align: center;
+     position: absolute;
+     top: -6px;
+     right: -3px;
+ }
+
+ @media(max-width:772px){
+     .Nav{
+         padding: 0px 0px;
+     }
+ }
+
+ @media (max-width:760px){
+     .Nav{
+        padding: 0 24px;
+     }
+
+     .menu{
+         display: flex;
+         /* margin-right: 12px; */
+         height: auto;
+         align-items: center;
+         
+     }
+
+     .navbar-left{
+        display: none;
+     }
+
+     .navbar-left_ul{
+         display:none;
+     }
+     .navbar-left img{
+         margin: 0;
+     }
+
+     .navbar-rigth ul{
+         padding: 0;
+     }
+
+     .navbar-email {
+         display: none;
+     }
+ }

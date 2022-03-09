@@ -1,14 +1,17 @@
+@import './global/global.scss';
+
 .MobileMenu{
     width: 194px;
     height: auto;
-    border: 1px solid var(--very-light-pink);
+    border: 1px solid $--very-light-pink;
     padding: 20px 20px 0 20px;
     border-radius: 8px;
     position: absolute;
     top: 60px;
     // right:40px;
     left:0px;
-    background-color: var(--text-input-field);
+    background-color: $--text-input-field;
+    z-index: 1;
 
 }
 
@@ -30,31 +33,33 @@
 
 .MobileMenu_li a{
     text-decoration: none;
-    font-size: var(--md);
-    color: var(--black);
-    display: inline-block;
-    margin-bottom: 20px;  
-}
-.MobileMenu_li:last-child {
-    padding-top: 20px;
-    border-top: 1px solid var(--very-light-pink);
-}
-.MobileMenu_li:last-child a{
-    color: var(--hospital-green);
-    font-size: var(--sm);
-}
-
-
-.MobileMenu_categories{
-    text-decoration: none;
-    font-size: var(--md);
-    color: var(--black);
+    font-size: $--md;
+    color: $--black;
     display: inline-block;
     margin-bottom: 20px;
     list-style: none;
-    width: 90%;
-    border-top: 1px solid var(--very-light-pink);
-    padding-top: 10px;  
 }
+
+.MobileMenu_categories{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: $--md;
+    color: $--black;
+    font-weight: bold;
+    margin-bottom: 20px;  
+}
+
+
+.MobileMenu_li:last-child {
+    padding-top: 20px;
+    border-top: 1px solid $--very-light-pink;
+}
+.MobileMenu_li:last-child a{
+    color: $--hospital-green;
+    font-size: $--sm;
+}
+
+
 
 

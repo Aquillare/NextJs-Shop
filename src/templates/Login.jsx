@@ -1,10 +1,7 @@
 import React, {useRef} from 'react';
-import '../styles/Login.scss';
-import {Link} from 'react-router-dom';
-
-
-
+import Link from 'next/link';
 import logo from '@logos/logo_yard_sale.svg';
+import '@styles/Login.module.scss';
 
 
 const Login = () => {
@@ -51,11 +48,11 @@ const Login = () => {
                 >
                     Log in
                 </button> 
-                <Link to="/recovery-password">Forgot mi password</Link>       
+               {/* <Link to="/recovery-password">Forgot mi password</Link> */}        
             </form>
 
-            <Link to="/signup"className="secondary-button-login sign-up-button">  
-            Sign up</Link>
+           {/* <Link to="/signup"className="secondary-button-login sign-up-button">  
+            Sign up</Link> */} 
            
 
 

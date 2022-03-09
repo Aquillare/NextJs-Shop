@@ -1,4 +1,4 @@
-
+@import './global/global.scss';
 
 .Login{
     width: 100%;
@@ -21,60 +21,63 @@
     justify-self: center;
     display:none;
 }
-form{
+.form{
     display:flex;
     flex-direction: column;
     width: 100%;
 }
 
 .label{
-    font-size: var(--sm);
+    font-size: $--sm;
     font-weight: bold;
     margin-bottom: 4px;
 }
 
 .input{
-    background-color: var(--text-input-field);
+    background-color: $--text-input-field;
     border:none;
     border-radius: 12px;
     height: 28px;
-    font-size: var(--md);
+    font-size: $--md;
     padding: 8px;
     margin-bottom: 16px;
 }
 
 .primary-button{
-    background-color: var(--hospital-green);
+    background-color: $--hospital-green;
     border-radius: 12px;
     border:none;
-    color: var(--white);
+    color: $--white;
     width:100%;
     cursor:pointer;
-    font-size: var(--md);
+    font-size: $--md;
     font-weight: bold;
     height: 44px;
+    margin: 0 0 2em 0;
 }
 
 .form a{
-    color: var(--hospital-green);
-    font-size: var(--sm);
+    color: $--hospital-green;
+    font-size: $--sm;
     text-align: center;
     text-decoration: none;
+    
 }
 
 .login-button{
     margin: 14px 0px 28px 0px;
 }
 .secondary-button-login{
-    background-color: var(--white);
+    background-color: $--white;
     border-radius: 12px;
-    border: 1px solid var(--hospital-green);
+    border: 1px solid $--hospital-green;
     width: 100%;
     cursor: pointer;
-    font-size: var(--md);
+    font-size: $--md;
     font-weight: bold;
     height: 44px;
-    color: var(--hospital-green); 
+    color: $--hospital-green;
+    margin-top: 1em; 
 }
 .sign-up-button{
     margin-top: 20px;
@@ -95,6 +98,9 @@ form{
     .sign-up-button{
         margin-top: 0px;
         margin-bottom: 10px;
+    }
+    .secondary-button-login{
+        margin-top: 0;
     }
     .form a{
         margin: 0px 0px 120px 0px;

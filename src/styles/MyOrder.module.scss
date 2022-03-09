@@ -1,12 +1,14 @@
-
+@import './global/global.scss';
 
 .MyOrder{
     width: 360px;
     padding: 24px;
     position: absolute;
     right: 0;
-    top:62px;
-    background-color: var(--white);
+    top:60px;
+    background-color: $--white;
+    z-index: 2;
+    cursor: default;
 }
 
 .title-container{
@@ -18,7 +20,7 @@
 }
 
 .title{
-    font-size: var(--lg);
+    font-size: $--lg;
     font-weight: bold;
     margin: 10px 0 10px 0;
 }
@@ -27,7 +29,7 @@
     grid-template-columns: auto 1fr;
     gap: 16 px;
     align-items: center;
-    background-color: var(--text-input-field);
+    background-color: $--text-input-field;
     margin-bottom: 24px;
     border-radius: 8px;
     padding: 10px 24px;
@@ -42,7 +44,7 @@
     font-weight: bold;
 }
 .order p span:nth-child(1){
-    font-size: var(--md);
+    font-size: $--md;
     font-weight: bold;
 }
 
@@ -51,14 +53,14 @@
 }
 
 .primary-button{
-    background-color: var(--hospital-green);
+    background-color: $--hospital-green;
     border: none;
     border-radius: 12px;
     height: 44px;
-    color: var(--white);
+    color: $--white;
     cursor: pointer;
     width: 100%;
-    font-size: var(--md);
+    font-size: $--md;
     font-weight: bold;
 }
 

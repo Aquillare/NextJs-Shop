@@ -1,20 +1,38 @@
-import React from 'react';
-import '@styles/Menu.scss';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import Link from 'next/link';
+import AppContext from '@context/AppContext';
+import styles from '@styles/Menu.module.scss';
+
 
 const Menu = () => {
+
+  const {toggleMenu} = useContext(AppContext);
+
     return(
-        <div className="Menu">
+        <div className={styles.Menu}>
             <ul>
                 <li>
-                    <Link to="/orders">My orders</Link>
+                   <Link href="/orders" passHref>
+                     <button className={styles['menu_button']} onClick={toggleMenu}>
+                       My Orders
+                     </button> 
+                   </Link>
+
                 </li>
                 <li>
-                    <Link to="account">My account</Link>
+                  <Link href="/account" passHref>
+                     <button className={styles['menu_button']} onClick={toggleMenu}>
+                       My Account
+                     </button>  
+                  </Link> 
                     
                 </li>
                 <li>
-                    <Link to="/login">Sign out</Link>
+                  <Link href="/login" passHref>
+                     <button className={styles['menu_button2']} onClick={toggleMenu}>
+                       Sign out
+                     </button>  
+                  </Link> 
                 </li>
             </ul>
         </div>

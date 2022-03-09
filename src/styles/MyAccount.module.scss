@@ -1,4 +1,4 @@
-
+@import './global/global.scss';
 
 .MyAccount{
     width: 100%;
@@ -13,7 +13,7 @@
     justify-items: center;
 }
 .title{
-    font-size: var(--lg);
+    font-size: $--lg;
     margin-bottom: 34px;
     text-align: start;
     width: 100%;
@@ -24,13 +24,13 @@
     width: 100%;
 }
 .label{ 
-    font-size: var(--sm);
+    font-size: $--sm;
     font-weight: bold;
     margin-bottom: 4px;
 }
 .value{
-    color:var(--very-light-pink);
-    font-size: var(--md);
+    color:$--very-light-pink;
+    font-size: $--md;
     margin: 4px 0px 38px 0px;
 }
 .input-name,
@@ -39,11 +39,11 @@
     margin-bottom: 22px;
 }
 .secondary-button{
-    background-color: var(--white);
-    border: 1px solid var(--hospital-green);
+    background-color: $--white;
+    border: 1px solid $--hospital-green;
     border-radius: 12px;
-    color:var(--hospital-green);
-    font-size: var(--md);
+    color:$--hospital-green;
+    font-size: $--md;
     height: 44px;
     cursor: pointer;
     width: 100%;

@@ -1,34 +1,38 @@
-
+@import './global/global.scss';
 
 .ProductInfo{
     margin: 24px 24px 0 24px;
+    cursor: default;
 }
 .ProductInfo p:nth-child(1){
-    font-size: var(--md);
+    font-size: $--md;
     font-weight: bold;
     margin: 0 0 4px 0;
 }
 .ProductInfo p:nth-child(2){
-    font-size: var(--md);
-    color: var(--very-light-pink);
+    font-size: $--md;
+    color: $--very-light-pink;
     margin: 0 0 36px 0;
 }
 .ProductInfo p:nth-child(3){
-    font-size: var(--sm);
+    font-size: $--sm;
     margin: 0 0 36px 0;
 }
 
 
 .primary-button{
-    background-color: var(--hospital-green);
+    background-color: $--hospital-green;
     border: none;
     border-radius: 12px;
     height: 44px;
-    color: var(--white);
+    color: $--white;
     cursor: pointer;
     width: 100%;
-    font-size: var(--md);
+    font-size: $--md;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .add-to-cart-button{
     display: flex;

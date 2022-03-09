@@ -1,21 +1,28 @@
-import React from 'react';
-import '@stylesProductInfo.scss';
-import addToCart from'@icons/bt_add_to_cart.svg';
+import React, { useContext } from 'react';
+import Image from 'next/image';
+import addToCartIcon from'@icons/bt_add_to_cart.svg';
+import styles from '@styles/ProductInfo.module.scss';
+import AppContext from '@context/AppContext';
 
 const ProductInfo = () => {
+
+    const {state, addToCart} = useContext(AppContext);
+    const product = {...state.productInfo[0]};
+
     return(
         <>
-            <img src="https://images.pexels.com/photos/2263815/pexels-photo-2263815.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Game boy"/>
-            <div className="ProductInfo">
-                <p>$35,00</p>
-                <p>Game boy</p>
-                <p>Is a very funny game console</p>
+            <Image src={product.images[0]} alt={product.title} height='260px' width='360px'  layout='responsive'/>
+            <div className={styles.ProductInfo}>
+                <p>{product.price}</p>
+                <p>{product.title}</p>
+                <p>{product.description}</p>
                 <button 
                 type="button"
-                className="primary-button add-to-cart-button"  
+                className={styles["primary-button"]}
+                onClick={()=>addToCart(product)}  
                 >
-                    <img src={addToCart} alt="add to cart"/>
-                    Add to cart
+                    <img src={addToCartIcon.src} alt="add to cart"/>
+                   <>Add to cart</> 
                 </button>
             </div> 
         </>

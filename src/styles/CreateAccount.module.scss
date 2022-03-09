@@ -1,4 +1,4 @@
-
+@import './global/global.scss';
 
 .CreateAccount{
     width: 100%;
@@ -13,7 +13,7 @@
     justify-items: center;
 }
 .title{
-    font-size: var(--lg);
+    font-size: $--lg;
     margin-bottom: 34px;
     text-align: start;
     width: 100%;
@@ -25,16 +25,16 @@
     width: 100%;
 }
 .label{
-    font-size: var(--sm);
+    font-size: $--sm;
     font-weight: bold;
     margin-bottom: 4px;
 }
 .input{
-    background-color: var(--text-input-field);
+    background-color: $--text-input-field;
     border: none;
     border-radius: 12px;
     height: 28px;
-    font-size: var(--md);
+    font-size: $--md;
     padding: 8px;
     margin-bottom: 16px;
 }
@@ -44,14 +44,14 @@
     margin-bottom: 22px;
 }
 .primary-button{
-    background-color: var(--hospital-green);
+    background-color: $--hospital-green;
     border: none;
     border-radius: 12px;
     height: 44px;
-    color: var(--white);
+    color: $--white;
     cursor: pointer;
     width: 100%;
-    font-size: var(--md);
+    font-size: $--md;
     font-weight: bold;
 }
 .create-button{
@@ -60,9 +60,9 @@
 
 @media (max-width:640px){
     .form-container{
-        align-self: end;
+        align-self:end;
     }
-    .create-button{
-        margin: 174px 0px 14px 0px;
+    .primary-button{
+        margin: 144px 0px 14px 0px;
     }
 }

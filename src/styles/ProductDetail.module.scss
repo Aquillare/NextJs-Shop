@@ -1,14 +1,17 @@
-
+@import './global/global.scss';
 
 .ProductDetail{
     width: 360px;
     padding-bottom: 24px;
-    position: absolute;
+    position: fixed;
     right: 0;
+    top:60px;
+    z-index: 1;
+    background: $--white;
 }
 
 .ProductDetail-close{
-    background: var(--white);
+    background: $--white;
     width: 14px;
     height: 14px;
     top:12px;
@@ -28,7 +31,7 @@
 }
 .ProductDetail > img:nth-child(2){
     width: 100%;
-    height: 360px;
+    height: 260px;
     object-fit: cover;
     border-radius: 0 0 20px 20px;
 }
@@ -36,5 +39,6 @@
 @media(max-width: 640px){
     .ProductDetail{
         width: 100%;
+        top:0;
     }
 }
