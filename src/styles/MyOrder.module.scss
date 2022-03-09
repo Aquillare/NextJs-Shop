@@ -14,7 +14,7 @@
 .title-container{
   display: flex;   
 }
-.title-container img{
+.title-container img {
     transform: rotate(180deg);
     margin-right: 14px;
 }
@@ -24,6 +24,12 @@
     font-weight: bold;
     margin: 10px 0 10px 0;
 }
+
+.my-order-content{
+    max-height: 56vh;
+    overflow: auto;
+}
+
 .order{
     display: grid;
     grid-template-columns: auto 1fr;
@@ -67,5 +73,10 @@
 @media(max-width: 640px){
     .MyOrder{
         width: 100%;
+    }
+    
+    .my-order-content{
+        max-height: 50vh ;
+        overflow: auto;
     }
 }

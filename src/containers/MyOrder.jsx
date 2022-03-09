@@ -29,13 +29,15 @@ const MyOrder = () => {
                   <OrderItem product={product} key={`OrderItem-${product.id}`}/>)
                   }  {/*Usamos `orderoItem-${}` para agregar un texto al numero del id y asi no tener conflictos ya que usamos es id en el key del map que usamos en el compoenente productList */}        
 
-                <div className={styles.order}>
+               
+            </div>
+            <div className={styles.order}>
                     <p>
                         <span>Total</span>
                     </p>
                     <p>${sumTotal()}</p>
-                </div>
-                   <Link
+            </div>
+            <Link
                     href="/checkout"  
                     >
                         <button
@@ -45,8 +47,7 @@ const MyOrder = () => {
                             Checkout
                         </button>
                         
-                    </Link>
-                </div>
+            </Link>
         </aside>
     );
 };

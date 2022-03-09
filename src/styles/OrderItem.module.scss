@@ -2,7 +2,7 @@
 
 .OrderItem{
     display: grid;
-    grid-template-columns: 30% 40% 20% auto;
+    grid-template-columns: 30% 40% 15% auto;
     gap: 6px;
     margin-bottom: 24px;
     align-items: center;
@@ -27,4 +27,5 @@
 }
 .close-image{
     cursor: pointer;
+    justify-self: start;
 }
