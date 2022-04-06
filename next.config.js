@@ -11,6 +11,6 @@ module.exports = withPWA({
   },
   reactStrictMode: true,
   images:{
-    domains:['placeimg.com']
+    domains:['api.lorem.space']
   }
 });
