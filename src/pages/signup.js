@@ -13,12 +13,12 @@ const CreateAccount = () => {
     const auth = useAuth();
 
     const [loading,setLoading] = useState(false);
-    const [errorMessage, setErrorMessage] = useState()
+    const [errorMessage, setErrorMessage] = useState();
 
-    const showError= (err) => {
+    /*const showError= (err) => {
         setErrorMessage(err);
         setTimeout( () => {setErrorMessage()}, 3000)
-    }
+    }*/
 
     const submitHandler = (event) => {
         event.preventDefault();
