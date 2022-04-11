@@ -11,6 +11,6 @@ module.exports = withPWA({
   },
   reactStrictMode: true,
   images:{
-    domains:['api.lorem.space']
+    domains:['api.lorem.space','reactshop.sfo3.digitaloceanspaces.com']
   }
 });
