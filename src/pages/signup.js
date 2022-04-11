@@ -13,7 +13,7 @@ const CreateAccount = () => {
     const auth = useAuth();
 
     const [loading,setLoading] = useState(false);
-    const [errorMessage, setErrorMessage] = useState();
+    //const [errorMessage, setErrorMessage] = useState();
 
     /*const showError= (err) => {
         setErrorMessage(err);
@@ -102,9 +102,9 @@ const CreateAccount = () => {
                 >Create
                 </button>
             </form>
-            {
+            {/*
                 errorMessage ? <p>{errorMessage}</p>  : null
-            }
+            */}
                    
         </div>
        
