@@ -34,7 +34,6 @@ const CreateAccount = () => {
     
         auth.signUp(name,lastName,phone,email,password)
             .then( data => console.log(data))
-            .then( () => console.log(errorMessage))
             .then( () => {setLoading(false)})
             .catch(error => {console.log(error);setLoading(false)});
       
