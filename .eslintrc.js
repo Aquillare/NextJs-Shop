@@ -14,7 +14,7 @@ module.exports = {
         'next/core-web-vitals',
     ],
     rules:{
-        'semi': ['error', 'always'],
+        //'semi': ['error'],
         'prettier/prettier':0,
         'jsx-a11y/click-events-have-key-events':0,
         '@next/next/no-img-element':0,
