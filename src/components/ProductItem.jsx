@@ -7,7 +7,6 @@ import styles from '@styles/ProductItem.module.scss';
 
 const ProductItem = ({product}) => {
     const {addToCart,state,removeFromCart,findInCart,viewProductInfo} = useContext(AppContext);  //recibimos la funcion addToCart del contexto de la app.
-
     const handleAdd = (item) => {
         addToCart(item);    
     };
@@ -22,19 +21,23 @@ const ProductItem = ({product}) => {
 
     return(
         <div className={styles.ProductItem}>
-            <Image
-            layout='responsive'
-            src={product.images[0].includes('http') ? product.images[0] : addToCartImage} 
+            {/*<Image
+            layout='fill'
+            //src={product.images[0].includes('http') ? product.images[0] : addToCartImage}
+            src={product.image.includes('http') ? product.image : addToCartImage}
             alt={product.title} 
             className={styles["product-img"]}
             width={240}
             height={240}
-            />
+    />*/}
+            <img src={product.image.includes('http') ? product.image : addToCartImage}
+            alt={product.name} 
+            className={styles["product-img"]}></img>
             <div className={styles["product-info"]}> 
                 <div className={styles["product-info-text"]}>
                     <p >${product.price}</p>
                     <div className={styles['product-title-container']} role="button" tabIndex={0} onClick={ () => handleInfo()}>
-                        <p className={styles['product-title']}>{product.title}</p>
+                        <p className={styles['product-title']}>{product.name}</p>
                     </div>  
                 </div>
                 <div className={styles['figure-container']}>

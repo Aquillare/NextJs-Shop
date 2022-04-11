@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import Image from 'next/image';
+
 import addToCartIcon from'@icons/bt_add_to_cart.svg';
 import styles from '@styles/ProductInfo.module.scss';
 import AppContext from '@context/AppContext';
@@ -11,10 +11,14 @@ const ProductInfo = () => {
 
     return(
         <>
-            <Image src={product.images[0]} alt={product.title} height='260px' width='360px'  layout='responsive'/>
+           {/* <Image src={product.images[0]} alt={product.title} height='260px' width='360px'  layout='responsive'/> */}
+           <img src={product.image.includes('http') ? product.image : null}
+            alt={product.name} 
+            className={styles["product-img"]}
+            ></img>
             <div className={styles.ProductInfo}>
                 <p>{product.price}</p>
-                <p>{product.title}</p>
+                <p>{product.name}</p>
                 <p>{product.description}</p>
                 <button 
                 type="button"

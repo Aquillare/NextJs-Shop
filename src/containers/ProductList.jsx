@@ -6,10 +6,12 @@ import AppContext from '@context/AppContext';
 import styles from '@styles/ProductList.module.scss';
 
 
-const API = 'https://api.escuelajs.co/api/v1/products';
+//const API = 'https://api.escuelajs.co/api/v1/products';
+const API = 'https://reactshop-dcl8k.ondigitalocean.app/api/v1/products'
 
 const ProductList = () => {
   const products = useGetProducts(API);
+  console.log(products)
 
   const {state} = useContext(AppContext);
 
