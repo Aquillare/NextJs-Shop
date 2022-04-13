@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '@hooks/useAuth';
 import styles from '@styles/CreateAccount.module.scss';
-import Loading from 'common/Loading';
-import ModalMessage from 'common/ModalMessage';
+import Loading from '../common/Loading';
+import ModalMessage from '../common/ModalMessage';
 import { useRouter } from 'next/router';
 
 const CreateAccount = () => {
