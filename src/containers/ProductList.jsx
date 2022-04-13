@@ -3,16 +3,15 @@ import ProductDetail from './ProductDetail';
 import ProductItem from '@components/ProductItem';
 import useGetProducts from '@hooks/useGetProducts';
 import AppContext from '@context/AppContext';
+import endPoints from '../services/api';
 import styles from '@styles/ProductList.module.scss';
 
 
-//const API = 'https://api.escuelajs.co/api/v1/products';
-const API = 'https://reactshop-dcl8k.ondigitalocean.app/api/v1/products'
+
+const API = endPoints.products.getProducts;
 
 const ProductList = () => {
   const products = useGetProducts(API);
-  console.log(products)
-
   const {state} = useContext(AppContext);
 
 

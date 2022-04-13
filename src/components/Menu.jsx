@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import Link from 'next/link';
 import AppContext from '@context/AppContext';
+import { useAuth } from '@hooks/useAuth';
 import styles from '@styles/Menu.module.scss';
 
 
 const Menu = () => {
-
+  const auth = useAuth();
   const {toggleMenu} = useContext(AppContext);
 
     return(
@@ -28,11 +29,13 @@ const Menu = () => {
                     
                 </li>
                 <li>
-                  <Link href="/login" passHref>
-                     <button className={styles['menu_button2']} onClick={toggleMenu}>
+                  <button className={styles['menu_button2']} onClick={() => {auth.logout(); toggleMenu()}}>
                        Sign out
                      </button>  
-                  </Link> 
+                  
+                  {/*<Link href="/login" passHref>
+                     
+                  </Link> */}
                 </li>
             </ul>
         </div>

@@ -1,9 +1,13 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '@hooks/useAuth';
 import styles from '@styles/CreateAccount.module.scss';
-import Loading from 'common/loading';
+import Loading from 'common/Loading';
+import ModalMessage from 'common/ModalMessage';
+import { useRouter } from 'next/router';
 
 const CreateAccount = () => {
+    const router = useRouter();
+
     const emailRef = useRef(null);
     const nameRef = useRef(null);
     const passwordRef = useRef(null);
@@ -13,12 +17,14 @@ const CreateAccount = () => {
     const auth = useAuth();
 
     const [loading,setLoading] = useState(false);
-    //const [errorMessage, setErrorMessage] = useState();
+    const [errorMessage, setErrorMessage] = useState();
+    const [userCreate, setUserCreate] = useState(false);
 
-    /*const showError= (err) => {
+    const showError= (err) => {
         setErrorMessage(err);
-        setTimeout( () => {setErrorMessage()}, 3000)
-    }*/
+        setTimeout( () => {setErrorMessage()}, 10000);
+        throw new Error(err);
+    };
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -27,14 +33,14 @@ const CreateAccount = () => {
         const lastName = lastNameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        const phone = parseInt(phoneRef.current.value);
-        
-        console.log(name,lastName,phone,email,password);
-        
+        const phone = phoneRef.current.value;
     
         auth.signUp(name,lastName,phone,email,password)
-            .then( data => console.log(data))
-            .then( () => {setLoading(false)})
+            .then( data => data.statusCode >= 300 || data.statusCode <= 199 ? 
+                showError(data.errors ? data[0]['message'] : data.message)
+                : 
+                setUserCreate(true))
+            .then( () => {setLoading(false);setTimeout(() => {setUserCreate(false);router.push('/login')  },3000)})
             .catch(error => {console.log(error);setLoading(false)});
       
     };
@@ -101,13 +107,14 @@ const CreateAccount = () => {
                 >Create
                 </button>
             </form>
-            {/*
+            {
                 errorMessage ? <p>{errorMessage}</p>  : null
-            */}
+            }
                    
         </div>
        
     </div> }
+    {userCreate ? <ModalMessage>{<p>Usuario creado satisfactoriamente!</p>}</ModalMessage>: null}
     </>
     );
 };

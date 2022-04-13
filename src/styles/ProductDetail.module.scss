@@ -1,7 +1,7 @@
 @import './global/global.scss';
 
 .ProductDetail{
-    width: 460px;
+    width: 35%;
     padding-bottom: 24px;
     position: fixed;
     right: 0;
@@ -35,7 +35,7 @@
 .ProductDetail > img:nth-child(2){
     width: 100%;
     height: 260px;
-    object-fit: fill;
+
     border-radius: 0 0 20px 20px;
 }
 
