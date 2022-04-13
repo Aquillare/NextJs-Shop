@@ -1,11 +1,9 @@
 import React from 'react';
 import { useAuth } from '@hooks/useAuth';
 import styles from '@styles/MyAccount.module.scss';
-import { useRouter } from 'next/router';
 
 const MyAccount = () => {
     const auth = useAuth();
-    const router = useRouter();
 
     if(auth.user === null ){
         auth.autorization();
