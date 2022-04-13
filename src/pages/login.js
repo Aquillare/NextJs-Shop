@@ -5,7 +5,7 @@ import logo from '@logos/logo_yard_sale.svg';
 import { useAuth } from '@hooks/useAuth';
 import styles from'@styles/Login.module.scss';
 import { useRouter } from 'next/router';
-import Loading from '../common/Loading';
+import Loading from '@common/Loading';
 
 
 const Login = () => {
