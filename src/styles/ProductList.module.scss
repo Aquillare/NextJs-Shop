@@ -10,5 +10,7 @@
 @media (max-width: 640px){
     .ProductList{
         grid-template-columns: repeat(auto-fill,140px);
-    }
+        column-gap: 10%;
+    };
+   
 }
