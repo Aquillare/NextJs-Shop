@@ -10,6 +10,7 @@
     background: $--blur;
     border: 1px solid $--hospital-green;
     box-shadow: -15px 30px 31px rgba(0,0,0,0.56) ;
+    overflow-y: scroll;
 
 }
 
@@ -23,11 +24,14 @@
     padding: 12px;
     border-radius: 50%;
     z-index: 2;
+    background: $--very-light-pink;
+    cursor: pointer;
 }
 .ProductDetail-close img{
     top: 6px;
     position: absolute;
-    left: 6px;
+    left: 5px;
+   
 }
 .ProductDetail-close:hover{
     cursor: pointer;
@@ -35,7 +39,7 @@
 .ProductDetail > img:nth-child(2){
     width: 100%;
     height: 260px;
-
+    object-fit: cover;
     border-radius: 0 0 20px 20px;
 }
 
@@ -43,5 +47,14 @@
     .ProductDetail{
         width: 100%;
         top:0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .ProductDetail > img:nth-child(2){
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 0 0 20px 20px;
     }
 }
