@@ -6,8 +6,17 @@ import AppContext from '@context/AppContext';
 
 const ProductInfo = () => {
 
-    const {state, addToCart} = useContext(AppContext);
+    const {state, addToCart, removeFromCart, findInCart} = useContext(AppContext);
     const product = {...state.productInfo[0]};
+
+    //funcion para añadir el producto al carrito o removerlo del carrito
+    const handleAddToCart = () => {
+        findInCart(product) 
+        ? 
+        removeFromCart(product)
+        : 
+        addToCart(product);
+    };
 
     return(
         <>
@@ -20,14 +29,27 @@ const ProductInfo = () => {
                 <p>{product.price}</p>
                 <p>{product.name}</p>
                 <p>{product.description}</p>
-                <button 
-                type="button"
-                className={styles["primary-button"]}
-                onClick={()=>addToCart(product)}  
-                >
-                    <img src={addToCartIcon.src} alt="add to cart"/>
-                   <>Add to cart</> 
-                </button>
+                {
+                    findInCart(product)
+                    ?
+                    <button 
+                    type="button"
+                    className={styles["secondary-button"]}
+                    onClick={()=> handleAddToCart()}  
+                    >
+                       <>Remove from cart</> 
+                    </button>
+                    :
+                    <button 
+                    type="button"
+                    className={styles["primary-button"]}
+                    onClick={()=> handleAddToCart()}  
+                    >
+                        <img src={addToCartIcon.src} alt="add to cart"/>
+                       <>Add to cart</> 
+                    </button>
+                }
+               
             </div> 
         </>
     );

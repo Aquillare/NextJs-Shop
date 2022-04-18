@@ -34,6 +34,20 @@
     align-items: center;
     justify-content: center;
 }
+.secondary-button{
+    background-color: $--red;
+    border: none;
+    border-radius: 12px;
+    height: 44px;
+    color: $--white;
+    cursor: pointer;
+    width: 100%;
+    font-size: $--md;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .add-to-cart-button{
     display: flex;
     align-items: center;
