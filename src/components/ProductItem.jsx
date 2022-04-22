@@ -19,6 +19,10 @@ const ProductItem = ({product}) => {
         viewProductInfo(product);
     };
 
+    if(!product.images[0]){
+        console.log(product.images);
+    }
+
     return(
         <div className={styles.ProductItem}>
             {/*<Image
@@ -30,9 +34,16 @@ const ProductItem = ({product}) => {
             width={240}
             height={240}
     />*/}
+        {product.images.length > 0 ?
             <img src={product.images[0].includes('https://') ? product.images[0] : addToCartImage.src}
             alt={product.name} 
             className={styles["product-img"]}></img>
+        :
+        <img src={addToCartImage.src}
+        alt={product.name} 
+            className={styles["product-img"]}></img>
+        }
+            
             <div className={styles["product-info"]}> 
                 <div className={styles["product-info-text"]}>
                     <p >${product.price}</p>

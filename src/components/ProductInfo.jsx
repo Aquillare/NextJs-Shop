@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-
+import addToCartImage from '@icons/bt_add_to_cart.svg';
 import addToCartIcon from'@icons/bt_add_to_cart.svg';
 import styles from '@styles/ProductInfo.module.scss';
 import AppContext from '@context/AppContext';
@@ -24,10 +24,15 @@ const ProductInfo = () => {
 
     return(
         <>
-           <img src={product.images[counter].includes('https://') ? product.images[counter] : addToCartIcon.src}
-            alt={product.title} 
-            className={styles["product-img"]}
-            ></img>
+             {product.images.length > 0 ?
+                <img src={product.images[counter].includes('https://') ? product.images[counter] : addToCartImage.src}
+                alt={product.name} 
+                className={styles["product-img"]}></img>
+                :
+                <img src={addToCartImage.src}
+                alt={product.name} 
+                    className={styles["product-img"]}></img>
+            }
             <button type='button' onClick={ () => counter >= product.images.length -1 ? setCounter(0) : setCounter(counter + 1)}></button>
             <div className={styles.ProductInfo}>
                 <p>{product.price}</p>
