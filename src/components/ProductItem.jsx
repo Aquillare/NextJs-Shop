@@ -30,14 +30,14 @@ const ProductItem = ({product}) => {
             width={240}
             height={240}
     />*/}
-            <img src={product.image.includes('http') ? product.image : addToCartImage}
+            <img src={product.images[0].includes('https://') ? product.images[0] : addToCartImage.src}
             alt={product.name} 
             className={styles["product-img"]}></img>
             <div className={styles["product-info"]}> 
                 <div className={styles["product-info-text"]}>
                     <p >${product.price}</p>
                     <div className={styles['product-title-container']} role="button" tabIndex={0} onClick={ () => handleInfo()}>
-                        <p className={styles['product-title']}>{product.name}</p>
+                        <p className={styles['product-title']}>{product.title}</p>
                     </div>  
                 </div>
                 <div className={styles['figure-container']}>

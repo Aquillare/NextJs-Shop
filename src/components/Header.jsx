@@ -94,7 +94,7 @@ const Header = () => {
                     </li>
                     <li>
                          <Link href={home} passHref>
-                            <button onClick={()=>selectCategory('Toys')}>Toys</button>
+                            <button onClick={()=>selectCategory('Shoes')}>Shoes</button>
                         </Link>
                         
                     </li>

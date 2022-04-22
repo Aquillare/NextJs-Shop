@@ -1,13 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import addToCartIcon from'@icons/bt_add_to_cart.svg';
 import styles from '@styles/ProductInfo.module.scss';
 import AppContext from '@context/AppContext';
 
+
 const ProductInfo = () => {
 
     const {state, addToCart, removeFromCart, findInCart} = useContext(AppContext);
     const product = {...state.productInfo[0]};
+
+    const [counter,setCounter] = useState(0);
+    console.log(counter);
 
     //funcion para añadir el producto al carrito o removerlo del carrito
     const handleAddToCart = () => {
@@ -20,14 +24,14 @@ const ProductInfo = () => {
 
     return(
         <>
-           {/* <Image src={product.images[0]} alt={product.title} height='260px' width='360px'  layout='responsive'/> */}
-           <img src={product.image.includes('http') ? product.image : null}
-            alt={product.name} 
+           <img src={product.images[counter].includes('https://') ? product.images[counter] : addToCartIcon.src}
+            alt={product.title} 
             className={styles["product-img"]}
             ></img>
+            <button type='button' onClick={ () => counter >= product.images.length -1 ? setCounter(0) : setCounter(counter + 1)}></button>
             <div className={styles.ProductInfo}>
                 <p>{product.price}</p>
-                <p>{product.name}</p>
+                <p>{product.title}</p>
                 <p>{product.description}</p>
                 {
                     findInCart(product)

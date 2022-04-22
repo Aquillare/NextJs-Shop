@@ -26,7 +26,7 @@ const MobileMenuCategories = () => {
             </li>
 
             <li >
-                <button className={styles["MobileMenuCategories_button"]}  onClick={()=>selectCategory('Toys')}>Toys</button> 
+                <button className={styles["MobileMenuCategories_button"]}  onClick={()=>selectCategory('Shoes')}>Shoes</button> 
             </li>
 
             <li>

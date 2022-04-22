@@ -16,7 +16,7 @@ const OrderItem = ({product}) => {
         <div className={styles.OrderItem}>
             
                   {/*<Image src={product.images[0]} alt={product.title} width='70px' height='70px' layout='fixed'/>*/}
-                   <img src={product.image.includes('http') ? product.image : null}
+                   <img src={product.images[0].includes('http') ? product.images[0] : null}
             alt={product.title} 
             className={styles["product-img"]}></img>
             <p>{product.title}</p>

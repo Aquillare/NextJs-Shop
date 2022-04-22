@@ -16,6 +16,7 @@ const ProductList = () => {
 
 
   const filters = products.filter( element => element.category.name == state.categoryProduct);
+  console.log(products.map( e => e.category.name));
   
 
     return(
