@@ -43,6 +43,18 @@
 .input-password{
     margin-bottom: 22px;
 }
+
+.input_error{
+    background-color: $--text-input-field;
+    border: none;
+    border-radius: 12px;
+    height: 28px;
+    font-size: $--md;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid red; 
+}
+
 .primary-button{
     background-color: $--hospital-green;
     border: none;

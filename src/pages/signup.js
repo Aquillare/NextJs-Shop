@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '@hooks/useAuth';
-import styles from '@styles/CreateAccount.module.scss';
 import Loading from '@common/Loading';
 import ModalMessage from '@common/ModalMessage';
 import { useRouter } from 'next/router';
+import styles from '@styles/CreateAccount.module.scss';
 
 const CreateAccount = () => {
     const router = useRouter();
@@ -20,8 +20,8 @@ const CreateAccount = () => {
     const [errorMessage, setErrorMessage] = useState();
     const [userCreate, setUserCreate] = useState(false);
 
-    const showError= (err) => {
-        setErrorMessage(err);
+    const showError= (err,path) => {
+        setErrorMessage([{error : err, ruta : path}]);
         setTimeout( () => {setErrorMessage()}, 10000);
         throw new Error(err);
     };
@@ -37,7 +37,7 @@ const CreateAccount = () => {
     
         auth.signUp(name,lastName,phone,email,password)
             .then( data => data.statusCode >= 300 || data.statusCode <= 199 ? 
-                showError(data.errors ? data[0]['message'] : data.message)
+                showError(data.errors ? data.errors[0]['message'] : data.message, data.errors ? data.errors[0]['path'] : null)
                 : 
                 setUserCreate(true))
             .then( () => {setLoading(false);setTimeout(() => {setUserCreate(false);router.push('/login')  },3000)})
@@ -86,7 +86,7 @@ const CreateAccount = () => {
                 <label htmlFor="email" className={styles.label}>Email addres</label>
                 <input 
                 type="email"
-                className={styles.input}
+                className={errorMessage ? errorMessage[0]['ruta'] === 'email' ? styles['input_error'] : styles.input   : styles.input}
                 id="email"
                 placeholder="name@example.com"
                 required='required'
@@ -108,7 +108,7 @@ const CreateAccount = () => {
                 </button>
             </form>
             {
-                errorMessage ? <p>{errorMessage}</p>  : null
+                errorMessage ? <p>{errorMessage[0]['error']}</p>  : null
             }
                    
         </div>

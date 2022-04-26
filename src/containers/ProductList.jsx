@@ -13,7 +13,6 @@ const API = endPoints.products.getProducts;
 const ProductList = () => {
   const products = useGetProducts(API);
   const {state} = useContext(AppContext);
-  console.log(products)
 
 
   const filters = products.filter( element => element.category.name == state.categoryProduct);
