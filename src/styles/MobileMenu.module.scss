@@ -34,13 +34,21 @@
     text-align: end;
 }
 
-.MobileMenu_li:nth-child(1),
-.MobileMenu_li:nth-child(2),
-.MobileMenu_li:nth-child(3){
+
+.MobileMenu_li:nth-child(1) a,
+.MobileMenu_li:nth-child(2) a,
+.MobileMenu_li:nth-child(3) a{
     font-weight: bold;
 }
 
-.MobileMenu_li a{
+
+
+.MobileMenu_li_button{
+    border: none;
+    background: transparent;
+}
+
+.MobileMenu_li_button a{
     text-decoration: none;
     font-size: $--md;
     color: $--black;

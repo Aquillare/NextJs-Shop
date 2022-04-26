@@ -20,18 +20,22 @@ const MobileMenu = ({handleToggleMobileMenu}) =>{
 
     return(
         <>
-            <div className={styles['MobileMenu_container']} onClick={ () => handleToggleMobileMenu()}>
+            <div className={styles['MobileMenu_container']} onClick={ () => handleToggleMobileMenu()} role='button' tabIndex={0}>
             </div>
             <div className={styles.MobileMenu}>
 
                 <ul className={styles["MobileMenu_ul"]}>
 
-                    <li className={styles["MobileMenu_li"]} onClick={() => handleToggleMobileMenu()}>
-                    <Link href="/orders" >My Orders</Link> 
+                    <li className={styles["MobileMenu_li"]}>
+                        <button className={styles['MobileMenu_li_button']} onClick={() => handleToggleMobileMenu() }>
+                            <Link href="/orders" >My Orders</Link>
+                        </button>
                     </li>
 
-                    <li className={styles["MobileMenu_li"]} onClick={() => handleToggleMobileMenu()}>
-                    <Link href="/account">My Account</Link> 
+                    <li className={styles["MobileMenu_li"]}>
+                        <button className={styles['MobileMenu_li_button']} onClick={() => handleToggleMobileMenu() }>
+                            <Link href="/account" >My Acount</Link>
+                        </button>
                     </li>
 
                     <li className={styles["MobileMenu_li"]}>
@@ -41,12 +45,16 @@ const MobileMenu = ({handleToggleMobileMenu}) =>{
                     </li>
 
                     {auth.user ?
-                        <li className={styles["MobileMenu_li"]} onClick={ () =>{ auth.logout(); handleToggleMobileMenu()}}>
-                        <Link href="/login">Sign out</Link>
+                        <li className={styles["MobileMenu_li"]}>
+                          <button className={styles['MobileMenu_li_button']} onClick={() =>{auth.logout();handleToggleMobileMenu() }  }>
+                            <Link href="/login" >Sign Out</Link>
+                          </button>
                         </li>
                     :
-                        <li className={styles["MobileMenu_li"]} onClick={ () =>handleToggleMobileMenu()}>
-                        <Link href="/login">Sign in</Link>
+                        <li className={styles["MobileMenu_li"]}>
+                             <button className={styles['MobileMenu_li_button']} onClick={() => handleToggleMobileMenu() }>
+                            <Link href="/login" >Sign In</Link>
+                            </button>
                         </li>
                     }
                 </ul>
