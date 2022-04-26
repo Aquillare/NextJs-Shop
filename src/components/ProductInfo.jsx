@@ -11,7 +11,6 @@ const ProductInfo = () => {
     const product = {...state.productInfo[0]};
 
     const [counter,setCounter] = useState(0);
-    console.log(counter);
 
     //funcion para añadir el producto al carrito o removerlo del carrito
     const handleAddToCart = () => {

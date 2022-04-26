@@ -1,36 +1,45 @@
 import React, { useContext } from "react";
 import AppContext from "@context/AppContext";
+import { useRouter } from "next/router";
 import styles from '@styles/MobileMenuCategories.module.scss';
 
-const MobileMenuCategories = () => {
+const MobileMenuCategories = ({handleToggleMobileMenu}) => {
+
+    const router = useRouter();
 
     const {selectCategory} = useContext(AppContext);
+    const handleCategory = (category) => {
+        selectCategory(category);
+        handleToggleMobileMenu();
+        router.push('/');
+
+    };
 
     return(
         <ul className={styles.MobileMenuCategories}>
 
             <li >
-                <button className={styles["MobileMenuCategories_button"]}  onClick={()=>selectCategory(0)}>All</button> 
+                <button className={styles["MobileMenuCategories_button"]}  onClick={()=>handleCategory(0)}>All</button> 
             </li>
                                 
             <li >
-                <button className={styles["MobileMenuCategories_button"]}  onClick={()=> selectCategory('Clothes')}>Clothes</button> 
+                <button className={styles["MobileMenuCategories_button"]}  onClick={()=>handleCategory('Clothes')}>Clothes</button> 
             </li>
                             
             <li >
-                <button className={styles["MobileMenuCategories_button"]} onClick={()=>selectCategory('Electronics')}>Electronics</button> 
+                <button className={styles["MobileMenuCategories_button"]} onClick={()=>handleCategory('Electronics')}>Electronics</button> 
             </li>
                                 
             <li >
-                <button className={styles["MobileMenuCategories_button"]}  onClick={()=>selectCategory('Furniture')}>Furnitures</button> 
+                <button className={styles["MobileMenuCategories_button"]}  onClick={()=>handleCategory('Furniture')}>Furnitures</button> 
             </li>
 
             <li >
-                <button className={styles["MobileMenuCategories_button"]}  onClick={()=>selectCategory('Shoes')}>Shoes</button> 
+                <button className={styles["MobileMenuCategories_button"]}  onClick={()=>handleCategory('Shoes')}>Shoes</button> 
             </li>
 
             <li>
-                <button className={styles["MobileMenuCategories_button"]}  onClick={()=>selectCategory('Others')}>Others</button> 
+                <button className={styles["MobileMenuCategories_button"]}  onClick={()=>handleCategory('Others')}>Others</button> 
             </li>
         </ul>
     );

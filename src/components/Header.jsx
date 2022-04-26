@@ -12,22 +12,12 @@ import { useAuth } from '@hooks/useAuth';
 import styles from '@styles/Header.module.scss';
 
 const Header = () => {
-    //const [toggle, setToggle] = useState(false);
-    //const [toggleOrders, setToggleOrders] = useState(false);
     const [toggleMobileMenu, setMobileMenu] = useState(false);
     const auth = useAuth();
 
    
 
     const {state,selectCategory,toggleMenu,toggleOrders} = useContext(AppContext); //traigo el estado del contexto de la app. //los usamos para mostrar la cantidad de elementos en el div del carrito
-
-    /*const handleToggle = () => {
-        setToggle(!toggle);
-    };*/
-
-    /*const handleToggleOrders = () => {
-        setToggleOrders(!toggleOrders);
-    };*/
 
     const handleToggleMobileMenu = () =>{
         setMobileMenu(!toggleMobileMenu);
@@ -150,7 +140,7 @@ const Header = () => {
             </div>
             {state.toggle.toggleMenu && <Menu/>}
             {state.toggle.toggleOrders && <MyOrder/>}
-            {toggleMobileMenu && <MobileMenu/> }
+            {toggleMobileMenu && <MobileMenu handleToggleMobileMenu={handleToggleMobileMenu}/> }
 
             
         </nav>
