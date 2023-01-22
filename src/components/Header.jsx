@@ -66,7 +66,7 @@ const Header = () => {
                     </li>
                     <li>
                         <Link href={home} passHref>
-                            <button onClick={()=>selectCategory('Clothes')}>Clothes</button>
+                            <button onClick={()=>selectCategory('4444')}>Clothes</button>
                         </Link>
                        
                     </li>
